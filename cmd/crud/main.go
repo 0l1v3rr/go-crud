@@ -25,6 +25,7 @@ func main() {
 	}))
 
 	app.Get("/api/books", handlers.GetBooks)
+	app.Get("/api/book/:id", handlers.GetBook)
 
 	app.Listen(fmt.Sprintf(":%v", port))
 }
