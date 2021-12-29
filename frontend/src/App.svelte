@@ -1,5 +1,6 @@
 <script>
 	import Book from './Book.svelte';
+	import Form from './Form.svelte';
 
 	async function getBooks() {
 		let response = await fetch("http://localhost:8080/api/books");
@@ -18,6 +19,12 @@
 		</div>
 		<hr>
 	</div>
+	<div class="row mb-2">
+		<div class="col-12">
+			<Form />
+		</div>
+	</div>
+	<hr class="my-4">
 	<div class="row">
 		{#await promise}
 			<p>Loading the books...</p>

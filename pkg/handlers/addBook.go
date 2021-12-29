@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"log"
+	"fmt"
 
 	"github.com/0l1v3rr/go-crud/pkg/data"
 	"github.com/gofiber/fiber/v2"
@@ -11,10 +11,10 @@ func AddBook(c *fiber.Ctx) error {
 	book := new(data.Book)
 
 	if err := c.BodyParser(book); err != nil {
-		log.Fatalf("%v", err)
-		return c.SendStatus(500)
+		fmt.Println(err)
+		return c.SendStatus(200)
 	}
 
 	data.Books = append(data.Books, *book)
-	return c.SendStatus(fiber.StatusCreated)
+	return c.SendStatus(200)
 }
