@@ -15,13 +15,12 @@ func UpdateBook(c *fiber.Ctx) error {
 
 	for index, item := range data.Books {
 		if item.ID == book.ID {
-			data.Books = append(data.Books[:index], data.Books[index+1:]...)
 			book := new(data.Book)
 			if err := c.BodyParser(book); err != nil {
 				fmt.Println(err)
 				return c.SendStatus(200)
 			}
-			data.Books = append(data.Books, *book)
+			data.Books[index] = *book
 			break
 		}
 	}
