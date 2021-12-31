@@ -28,6 +28,7 @@ func main() {
 	app.Get("/api/book/:id", handlers.GetBook)
 	app.Post("/api/addbook", handlers.AddBook)
 	app.Delete("/api/deletebook/:id", handlers.DeleteBook)
+	app.Put("/api/updatebook/:id", handlers.UpdateBook)
 
 	app.Listen(fmt.Sprintf(":%v", port))
 }
