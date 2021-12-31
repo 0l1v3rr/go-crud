@@ -25,3 +25,4 @@ cd frontend
 npm i
 npm run dev
 ```
+The application starts running here: [http://localhost:5000](http://localhost:5000)
